@@ -41,6 +41,15 @@
     // Add any improvements to enhance usability (e.g., clear input after adding, error messages for invalid entries).
     // Keep the code clean, organized, and well-commented.
 
+// Что нужно сделать:
+//
+//    --- Получать введенную строку из input
+//
+// ------Проверять валидность формата
+//
+// ------Добавлять в список подходящие пары
+
+
 
 let container=document.getElementById('container')
 let addDiv=document.getElementById('addDiv')
@@ -51,5 +60,21 @@ let bthSortByName=document.getElementById('byName')
 let bthSortByValue= document.getElementById('byValue')
 let bthDelete=document.getElementById('deleteBtn')
 let divPairList=document.getElementById('pairList')
-let =document.getElementById('')
-let =document.getElementById('')
+
+// =======------Проверка на валидность формата================--------
+
+function isPairValid(str){
+    let regex=/^\s*[a-zA-Z0-9]+\s*=\s*[a-zA-Z0-9]+\s*$/
+    return regex.test(str)
+}
+function addPair(){
+
+    let inputValue=input.value
+
+    if (!isPairValid(inputValue)){
+        errorDiv.textContent ="Invalid format! Use: Name=Value (letters and numbers only)";
+        return
+    }
+
+
+}
