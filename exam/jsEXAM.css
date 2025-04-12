@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
@@ -8,44 +9,134 @@
 }
 
 body {
-    margin: 0 auto;
     padding: 20px;
     background-color: #f5f5f5;
+    overflow-x: hidden;
 }
 #container{
-    background: salmon;
+    background: #e1d6d5;
     max-width: 770px;
     width: 100%;
+     padding: 20px;
+    margin: 0 auto;
+   border-radius: 5px ;
+    border: 1px black solid;;
+    box-shadow: 10px 5px 5px #b6a8a8;
 
-    /*display: flex;*/
-    /*align-items: center;*/
-    /*justify-items: center;*/
-    /*flex-direction: column;*/
+    position: relative;
+    z-index: 1;
+}
+
+
+/*================input section==========================*/
+#addDiv{
+    padding: 20px 20px;
+    display: flex;
+    gap: 10px;
+    /*flex-wrap: wrap;*/
+}
+#name-value{
+    width: 80%;
+    min-width: 200px;
+    padding: 10px;
+}
+#btn-add{
+    width: 20%;
+    background: rgb(46, 14, 85);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
+
+h1{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/*====================buttons==================*/
+#btnSection{
+    padding: 20px;
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+
 
 }
+
+
+button{
+    padding: 12px 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    color: whitesmoke;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+#byName,#byValue{
+    background: green;
+}
+
+#deleteBtn{
+    background: #e32b2b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+/*===========================Pair List=========================*/
 #pairList{
-    background: lightseagreen;
+    background: #efefef;
     min-height: 100px;
     max-height: 300px;
     border-radius: 5px ;
     border: 1px black solid;
+    padding: 20px ;
 
 }
-#addDiv{
-    padding: 20px 20px 20px 20px;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+
+
+/*=============================decoration=========================*/
+.decor-circle {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    border: rgba(96,73,124,0.69) 30px solid;
+    z-index: 0
 }
-#name-value{
-    min-width: 200px;
-    padding: 10px;
+.circle-left{
+    left: -300px;
+    top: -100px;
+    border: rgb(96, 73, 124) 30px solid;
 }
 
+.circle-right{
+    right: -300px;
+    top: -200px;
+}
+/*==================может добавить?===============*/
+/*#pairList {*/
+/*    overflow-y: auto;*/
+/*    scrollbar-width: thin;*/
+/*    scrollbar-color: rgb(46, 14, 85) #f1f1f1;*/
+/*}*/
 
 
-
-
+/*=====================device size settings===========================*/
 
 @media (max-width: 600px) {
     .input-section {
@@ -53,6 +144,7 @@ body {
     }
 
     .action-buttons {
+
         flex-direction: column;
     }
 
