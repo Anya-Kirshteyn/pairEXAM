@@ -19,7 +19,7 @@
 //     Улучшения:
 //     Добавьте улучшения для удобства (очистка поля после добавления, сообщения об ошибках).
 //     Код должен быть чистым, организованным и с комментариями.
-
+// ===============удалить=================
     // Task: Create a Name/Value Pair Management Application
     // A textbox for users to enter name/value pairs in the format: <name> = <value>.
     // Validation: Ensure the input follows the correct syntax (alphanumeric characters only for names/values, with optional spaces around the = sign).
@@ -40,3 +40,16 @@
     // Enhancements:
     // Add any improvements to enhance usability (e.g., clear input after adding, error messages for invalid entries).
     // Keep the code clean, organized, and well-commented.
+
+
+let container=document.getElementById('container')
+let addDiv=document.getElementById('addDiv')
+let input=document.getElementById('name-value')
+let bthAdd=document.getElementById('btn-add')
+let errorDiv=document.getElementById('error')
+let bthSortByName=document.getElementById('byName')
+let bthSortByValue= document.getElementById('byValue')
+let bthDelete=document.getElementById('deleteBtn')
+let =document.getElementById('')
+let =document.getElementById('')
+let =document.getElementById('')

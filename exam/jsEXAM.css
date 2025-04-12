@@ -20,7 +20,7 @@ body {
      padding: 20px;
     margin: 0 auto;
    border-radius: 5px ;
-    border: 1px black solid;;
+    border: 1px #a8a2a2 solid;;
     box-shadow: 10px 5px 5px #b6a8a8;
 
     position: relative;
@@ -103,7 +103,7 @@ button:hover {
     min-height: 100px;
     max-height: 300px;
     border-radius: 5px ;
-    border: 1px black solid;
+    border: 1px #a8a2a2 solid;
     padding: 20px ;
 
 }
