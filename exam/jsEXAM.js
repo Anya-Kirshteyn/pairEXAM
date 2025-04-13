@@ -116,6 +116,7 @@ let list=document.createElement('ul')
 
         const label=document.createElement('label')
         label.htmlFor=checkbox.id
+
     })
 
 });
