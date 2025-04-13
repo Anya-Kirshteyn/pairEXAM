@@ -111,13 +111,23 @@ let list=document.createElement('ul')
         const li=document.createElement('li')
         const checkbox=document.createElement('input')
         checkbox.type='checkbox'
-        checkbox.id=`pair${index}`
+        checkbox.id=`${index}`
 
 
         const label=document.createElement('label')
         label.htmlFor=checkbox.id
+        label.textContent=`${pair.name}=${pair.value}`
 
+        li.append(checkbox,label)
+        divPairList.appendChild(li)
     })
+
+    // ==========================функция удаления======================
+
+
+
+
+
 
 });
 
