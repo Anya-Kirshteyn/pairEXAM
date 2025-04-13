@@ -49,32 +49,51 @@
 //
 // ------Добавлять в список подходящие пары
 
-
-
-let container=document.getElementById('container')
-let addDiv=document.getElementById('addDiv')
-let input=document.getElementById('name-value')
-let bthAdd=document.getElementById('btn-add')
-let errorDiv=document.getElementById('error')
-let bthSortByName=document.getElementById('byName')
-let bthSortByValue= document.getElementById('byValue')
-let bthDelete=document.getElementById('deleteBtn')
-let divPairList=document.getElementById('pairList')
+addEventListener("DOMContentLoaded", (event) => {
+    let container = document.getElementById('container')
+    let addDiv = document.getElementById('addDiv')
+    let input = document.getElementById('name-value')
+    let bthAdd = document.getElementById('btn-add')
+    let errorDiv = document.getElementById('error')
+    let bthSortByName = document.getElementById('byName')
+    let bthSortByValue = document.getElementById('byValue')
+    let bthDelete = document.getElementById('deleteBtn')
+    let divPairList = document.getElementById('pairList')
 
 // =======------Проверка на валидность формата================--------
 
-function isPairValid(str){
-    let regex=/^\s*[a-zA-Z0-9]+\s*=\s*[a-zA-Z0-9]+\s*$/
-    return regex.test(str)
-}
-function addPair(){
+bthAdd.addEventListener("click", function (){
+    const inputValue=input.value.trim()
 
-    let inputValue=input.value
-
-    if (!isPairValid(inputValue)){
-        errorDiv.textContent ="Invalid format! Use: Name=Value (letters and numbers only)";
-        return
+    function isPairValid(str){
+        let regex=/^\s*[a-zA-Z0-9]+\s*=\s*[a-zA-Z0-9]+\s*$/;
+        return regex.test(str);
     }
 
+    if (!inputValue){
+       errorDiv.textContent='The field cannot be empty!';
+       return  ;
+   }
+   if(!isPairValid(inputValue)){
+       errorDiv.textContent='Incorrect format! Use "Name=Value" (letters and numbers only)';
+       return;
+   }
+// =================чистка+заполнение================
+   errorDiv.textContent='';
 
+   // addPairToList(inputValue)  сделать потом
+
+    input.value=''
+
+      })
+
+});
+
+// ========================addPairToList======================
+let pairs=[]
+addPairToList=(strPair)=>{
+    let pairsArray=strPair.split('=')
+    let trimArray=pairsArray.map(item=>item.trim())
+const [name, value]=trimArray
+    pairs.push(trimArray)
 }
