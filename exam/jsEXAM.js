@@ -81,19 +81,48 @@ bthAdd.addEventListener("click", function (){
 // =================чистка+заполнение================
    errorDiv.textContent='';
 
-   // addPairToList(inputValue)  сделать потом
+   addPairToList(inputValue)
 
     input.value=''
 
       })
 
-});
 
 // ========================addPairToList======================
 let pairs=[]
 addPairToList=(strPair)=>{
     let pairsArray=strPair.split('=')
     let trimArray=pairsArray.map(item=>item.trim())
-const [name, value]=trimArray
-    pairs.push(trimArray)
+    const [name, value]=trimArray
+    pairs.push({name,value})
+
+  updatePairList()
 }
+
+// ====================функция обновление Pairlist=======================
+
+
+updatePairList=()=>{
+    divPairList.innerHTML=''
+}
+
+let list=document.createElement('ul')
+    pairs.forEach((pair,index)=>{
+        const li=document.createElement('li')
+        const checkbox=document.createElement('input')
+        checkbox.type='checkbox'
+        checkbox.id=`pair${index}`
+
+
+        const label=document.createElement('label')
+        label.htmlFor=checkbox.id
+    })
+
+});
+
+
+
+
+
+
+
