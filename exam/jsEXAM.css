@@ -133,12 +133,25 @@ li{
     right: -300px;
     top: -200px;
 }
-/*==================может добавить?===============*/
-/*#pairList {*/
-/*    overflow-y: auto;*/
-/*    scrollbar-width: thin;*/
-/*    scrollbar-color: rgb(46, 14, 85) #f1f1f1;*/
-/*}*/
+
+
+
+.responsive-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gif-container {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 15px;
+    width: 100px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 4px;
+    padding: 0;
+}
 
 
 /*=====================device size settings===========================*/
@@ -156,8 +169,11 @@ li{
     button {
         width: 100%;
     }
-}
 
+    .gif-container {
+        display: none;
+    }
+}
 
 
 

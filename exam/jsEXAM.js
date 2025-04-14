@@ -126,7 +126,7 @@ bthDelete.addEventListener("click", ()=>{
        const indexToDelete=Array.from(checkedBoxes).map((item)=>parseInt(item.id))
            .sort((a,b)=>b-a)
 
-// ==================или а-б?=======================
+
     indexToDelete.forEach((index)=>{pairs.splice(index,1)})
 
           updatePairList()
@@ -157,8 +157,13 @@ bthSortByName.addEventListener("click", ()=>{
 
 });
 
+// =====бонус!я не правильно поняла кр и начала делать конвертер валют...это была ошибка :)
+// 'your code will always suck!, may as well have fun with if'-Mike Tyson
+// =====================subway===============
 
-
+document.getElementById('gifBtn').addEventListener('click', () => {
+    window.location.href = 'ADHDwon/miniBank.html';
+});
 
 
 
