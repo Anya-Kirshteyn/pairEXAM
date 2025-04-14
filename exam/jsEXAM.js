@@ -124,7 +124,17 @@ let list=document.createElement('ul')
 
     // ==========================функция удаления======================
 
+bthDelete.addEventListener("click", ()=>{
+        let checkedBoxes=divPairList.querySelectorAll('input[type="checkbox"]:checked')
 
+       const indexToDelete=Array.from(checkedBoxes).map((item)=>parseInt(item.id))
+           .sort((a,b)=>b-a)
+
+// ==================или а-б?=======================
+    indexToDelete.forEach((index)=>{pairs.splice(index,1)})
+
+updatePairList()
+    })
 
 
 
