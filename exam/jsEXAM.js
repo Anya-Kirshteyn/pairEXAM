@@ -41,17 +41,9 @@
     // Add any improvements to enhance usability (e.g., clear input after adding, error messages for invalid entries).
     // Keep the code clean, organized, and well-commented.
 
-// Что нужно сделать:
-//
-//    --- Получать введенную строку из input
-//
-// ------Проверять валидность формата
-//
-// ------Добавлять в список подходящие пары
 
 addEventListener("DOMContentLoaded", (event) => {
-    let container = document.getElementById('container')
-    let addDiv = document.getElementById('addDiv')
+
     let input = document.getElementById('name-value')
     let bthAdd = document.getElementById('btn-add')
     let errorDiv = document.getElementById('error')
@@ -144,8 +136,8 @@ bthSortByName.addEventListener("click", ()=>{
     pairs.sort((a,b)=>{
         const nameA=a.name.toLowerCase()
         const nameB=b.name.toLowerCase()
-        if (nameA>nameB)return -1
-        if (nameA<nameB)return 1
+        if (nameA>nameB)return 1
+        if (nameA<nameB)return -1
         return 0
     })
     updatePairList()
@@ -154,8 +146,8 @@ bthSortByName.addEventListener("click", ()=>{
         pairs.sort((a,b)=>{
             const valueA=a.value.toLowerCase()
             const valueB=b.value.toLowerCase()
-            if (valueA>valueB)return -1
-            if (valueA<valueB)return 1
+            if (valueA>valueB)return 1
+            if (valueA<valueB)return -1
             return 0
 
         })
