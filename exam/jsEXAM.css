@@ -110,7 +110,9 @@ button:hover {
     padding: 20px ;
 
 }
-
+li{
+    list-style-type: none;
+}
 
 /*=============================decoration=========================*/
 .decor-circle {

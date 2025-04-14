@@ -91,7 +91,9 @@ bthAdd.addEventListener("click", function (){
 // ========================addPairToList======================
 let pairs=[]
 addPairToList=(strPair)=>{
+
     let pairsArray=strPair.split('=')
+
     let trimArray=pairsArray.map(item=>item.trim())
     const [name, value]=trimArray
     pairs.push({name,value})
@@ -102,26 +104,28 @@ addPairToList=(strPair)=>{
 // ====================функция обновление Pairlist=======================
 
 
-updatePairList=()=>{
-    divPairList.innerHTML=''
-}
-
-let list=document.createElement('ul')
-    pairs.forEach((pair,index)=>{
-        const li=document.createElement('li')
-        const checkbox=document.createElement('input')
-        checkbox.type='checkbox'
-        checkbox.id=`${index}`
+updatePairList=()=> {
+    divPairList.innerHTML = ''
 
 
-        const label=document.createElement('label')
-        label.htmlFor=checkbox.id
-        label.textContent=`${pair.name}=${pair.value}`
+    let list = document.createElement('ul')
 
-        li.append(checkbox,label)
+    pairs.forEach((pair, index) => {
+        const li = document.createElement('li')
+        const checkbox = document.createElement('input')
+        checkbox.type = 'checkbox'
+        checkbox.id = `${index}`
+
+
+        const label = document.createElement('label')
+        label.htmlFor = checkbox.id
+        label.textContent = `${pair.name}=${pair.value}`
+
+        li.append(checkbox, label)
         divPairList.appendChild(li)
     })
 
+}
     // ==========================функция удаления======================
 
 bthDelete.addEventListener("click", ()=>{
@@ -144,7 +148,19 @@ bthSortByName.addEventListener("click", ()=>{
         if (nameA<nameB)return 1
         return 0
     })
+    updatePairList()
 })
+    bthSortByValue.addEventListener("click", ()=>{
+        pairs.sort((a,b)=>{
+            const valueA=a.value.toLowerCase()
+            const valueB=b.value.toLowerCase()
+            if (valueA>valueB)return -1
+            if (valueA<valueB)return 1
+            return 0
+
+        })
+        updatePairList()
+    })
 
 
 });
